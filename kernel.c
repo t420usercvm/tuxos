@@ -1,5 +1,5 @@
 /* TuxOS - a minimal operating system
- * Copyright (C) 2025 PSPGuyCVM
+ * Copyright (C) 2025  Your Name
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -187,7 +187,7 @@ void shell() {
 
         if (!strcmp(cmd, "help")) {
             print_string("Available commands:\n");
-            print_string("help, whoami, echo, clear, uname, date, ls, pwd, ver, tux, shutdown, reboot\n");
+            print_string("help, whoami, echo, clear, uname, date, ls, pwd, ver, tux, shutdown, reboot, panic\n");
         } else if (!strcmp(cmd, "whoami")) {
             print_string("root\n");
         } else if (!strcmp(cmd, "echo")) {
@@ -220,6 +220,12 @@ void shell() {
             power_off();
         } else if (!strcmp(cmd, "reboot")) {
             outb(0x64, 0xFE);
+        } else if (!strcmp(cmd, "panic")) {
+            print_string("KERNEL PANIC\n");
+            print_string("TUXOS_PANIC\n");
+            while (1) {
+               asm volatile ("hlt");
+            }
         } else {
             print_string("Unknown command. Type 'help'.\n");
         }
