@@ -27,7 +27,7 @@ It has its own bootloader, a VGA text‑mode console, PS/2 keyboard driver with 
   - `shutdown` – power off (QEMU/Bochs/VirtualBox)
   - `reboot` – reboot the machine
 - APM shutdown fallback
-- QEMU and real‑hardware bootable (via floppy image or ISO)
+- QEMU and real‑hardware bootable (via floppy image)
 
 ## Building
 
@@ -67,8 +67,6 @@ sync
 ```
 
 (Replace `/dev/sdX` with your USB device – double‑check it’s correct.)
-
-You can also create an ISO with `genisoimage` (see the Makefile or comments in the source).
 
 ## File Overview
 
