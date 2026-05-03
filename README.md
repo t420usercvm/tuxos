@@ -26,6 +26,7 @@ It has its own bootloader, a VGA text‑mode console, PS/2 keyboard driver with 
   - `tux` – draws a small ASCII penguin
   - `shutdown` – power off (QEMU/Bochs/VirtualBox)
   - `reboot` – reboot the machine
+  - `panic` - kernel panic, wow!
 - APM shutdown fallback
 - QEMU and real‑hardware bootable (via floppy image)
 
